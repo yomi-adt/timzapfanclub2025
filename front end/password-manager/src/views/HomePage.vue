@@ -73,9 +73,41 @@
                             <b-button
                                 variant="primary"
                                 size="sm"
+                                @click="showEdit = true"
                                 >
                                 <i class="bi bi-pencil-square"></i>
                             </b-button>
+
+                            <b-modal
+                                title="Edit New Password"
+                                v-model="showModal"
+                                centered
+                                ok-title="Add"
+                            >   
+
+                            <b-form-group label="URL">
+                                <b-form-input
+                                v-model="url"
+                                placeholder="Enter the URL"
+                                ></b-form-input>
+                            </b-form-group>
+                            
+                            <b-form-group label="Username">
+                                <b-form-input
+                                v-model="username"
+                                placeholder="Enter the username"
+                                ></b-form-input>
+                            </b-form-group>
+
+                            <b-form-group label="Password">
+                                <b-form-input
+                                type="password"
+                                v-model="password"
+                                placeholder="Enter the password"
+                                ></b-form-input>
+                            </b-form-group>
+
+                            </b-modal>
                         </template>
 
                         </b-table>
@@ -102,6 +134,7 @@ export default{
     data(){
         return{
             showPassword: false,
+            showEdit: false,
 
             fields: [
             {

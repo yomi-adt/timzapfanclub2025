@@ -43,10 +43,11 @@ public class PasswordManager {
         new PasswordManager("hi");
     }
 
-    public static byte[] generateSalt(){
+    public byte[] generateSalt(){
         SecureRandom random = new SecureRandom();
         byte[] salt = new byte[64];
         random.nextBytes(salt);
+        this.salt = salt;
         return salt;
     }
 

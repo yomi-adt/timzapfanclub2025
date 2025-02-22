@@ -64,6 +64,7 @@
                             <b-button
                                 variant="danger"
                                 size="sm"
+                                @click="deleteButton(currRow.item)"
                                 >
                                 <i class="bi bi-trash3-fill"></i>
                             </b-button>
@@ -201,6 +202,27 @@ export default{
                     okVariant: 'success',
                     centered: true
                     })
+
+            } catch($e) {
+
+            }
+        },
+
+        async deleteButton(item) {
+            try {
+                console.log("LOL XD")
+                
+                this.$bvModal.msgBoxOk('Say goodbye to your information', {
+                    title: 'Password Deleted!',
+                    size: 'sm',
+                    buttonSize: 'sm',
+                    okVariant: 'success',
+                    centered: true
+                    })
+
+                    // console.log(item.id)
+                    this.items.splice(this.items.indexOf(item), 1)
+                    // console.log("After deletion: " + item.id)
 
             } catch($e) {
 

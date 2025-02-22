@@ -11,11 +11,21 @@
             </b-col>
             
             <b-col>
-                <b-row class="mb-5">
+                <b-row class="mb-4" no-gutters>
                     <b-col>
-                        <h1 class="display-5">My Passwords</h1>
+                        <h2 class="display-5">My Passwords</h2>
                     </b-col>
-                    <b-col cols="2" class="ml-auto">
+                    <b-col cols="1" class="mr-2">
+                        <b-button
+                            class="px-2"
+                            @click="showPassword = !showPassword"
+
+                        >
+                            <i class="bi bi-eye-fill"></i>
+                            Show
+                        </b-button>
+                    </b-col>
+                    <b-col cols="1" class="ml-auto">
                         <AddNewPassword></AddNewPassword>
                     </b-col>
                 </b-row>
@@ -25,8 +35,6 @@
                         <b-table
                             :items="items"
                             :fields="fields"
-                            :current-page="currentPage"
-                            :per-page="perPage"
                             show-empty
                             fixed
                             
@@ -41,8 +49,8 @@
                             
                         </template>
 
-                        <template #cell(view)="currRow">
-                            <i class="onClick bi bi-eye-fill" @click="showPassword = !showPassword"></i>
+                        <template #cell(copy)="currRow">
+                            <i @click="copyToClipboard(currRow.item.password)" class="bi onClick bi-clipboard mr-5"></i>
                         </template>
 
                         <template #cell(url)="currRow">
@@ -105,10 +113,10 @@ export default{
                     label: 'Username'
                 },
                 {
-                    key: 'view',
+                    key: 'copy',
                     sortable: false,
                     label: ' ',
-                    thStyle: {width: '2%'},
+                    thStyle: {width: '4%'},
                 },
                 {
                     key: 'password',
@@ -140,6 +148,25 @@ export default{
         }
     },
 
+    methods: {
+        async copyToClipboard(password){
+            try {
+                console.log("XD")
+                await navigator.clipboard.writeText(password);
+                this.$bvModal.msgBoxOk('The password was copied to clipboard.', {
+                    title: 'Copied!',
+                    size: 'sm',
+                    buttonSize: 'sm',
+                    okVariant: 'success',
+                    centered: true
+                    })
+
+            } catch($e) {
+
+            }
+        }
+    },
+
     computed: {
         parseUrl(url){
 
@@ -152,7 +179,7 @@ export default{
 <style scoped>
     .customPadding{
         padding-left: 8%!important;
-        padding-right: 20%!important;
+        padding-right: 15%!important;
         padding-top:  5%!important;
     }
 

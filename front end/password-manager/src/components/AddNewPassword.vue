@@ -1,15 +1,17 @@
 <template>
-    <b-container fluid>
+    <b-container fluid class="px-0">
         <b-button
-            class="fillHeight"
+            class="fillHeight px-1"
             variant="primary"
             block
             size="md"
+            @click="showModal"
         >
         <i class="bi bi-plus-circle"></i>
-        New Password
-        
+        New
         </b-button>
+
+
 
   </b-container>
 </template>
@@ -23,6 +25,8 @@ export default{
     
     data(){
         return{
+            showModal: false,
+
 
         }
     }
@@ -31,7 +35,5 @@ export default{
 </script>
 
 <style scoped>
-    .fillHeight{
-        min-height: 50px!important;
-    }
+
 </style>

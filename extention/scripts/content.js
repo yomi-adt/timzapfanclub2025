@@ -28,10 +28,10 @@ function autofill() {
     }
 
 
-    getLoginInfo();
-    // currentEmail = "asldf@sldfa.sdf";
-    // currentUsername = "testusername";
-    // currentPassword = "testpassword123";
+    //getLoginInfo();
+    currentEmail = "asldf@sldfa.sdf";
+    currentUsername = "testusername";
+    currentPassword = "testpassword123";
 
 
     if (emailField && currentEmail) {

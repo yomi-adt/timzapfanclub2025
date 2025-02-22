@@ -5,11 +5,21 @@
             variant="primary"
             block
             size="md"
-            @click="showModal"
+            @click="showModal = true"
         >
         <i class="bi bi-plus-circle"></i>
         New
         </b-button>
+
+        <b-modal
+            title="Add New Password"
+            v-model="showModal"
+            centered
+            ok-title="Add"
+        >   
+        <b-inpt
+
+        </b-modal>
 
 
 

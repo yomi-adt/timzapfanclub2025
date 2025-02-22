@@ -1,7 +1,7 @@
 
 let url = "http://localhost:8080";
 
-//document.addEventListener("DOMContentLoaded", autofill());
+document.addEventListener("DOMContentLoaded", autofill());
 //document.addEventListener("submit", captureLoginInfo());
 
 
@@ -28,10 +28,10 @@ function autofill() {
     }
 
 
-    getLoginInfo();
-    // currentEmail = "asldf@sldfa.sdf";
-    // currentUsername = "testusername";
-    // currentPassword = "testpassword123";
+    //getLoginInfo();
+    currentEmail = "asldf@sldfa.sdf";
+    currentUsername = "testusername";
+    currentPassword = "testpassword123";
 
 
     if (emailField && currentEmail) {

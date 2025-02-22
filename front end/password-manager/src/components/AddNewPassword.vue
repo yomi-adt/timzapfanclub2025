@@ -51,6 +51,7 @@
 
 
 <script >
+import { PasswordService }  from  '../api/PasswordService.js'
 
 export default{
     name: 'AddNewPassword', 
@@ -68,8 +69,7 @@ export default{
 
     methods: {
         async submit(){
-            
-            //make POST api call
+
         }
     }
 }

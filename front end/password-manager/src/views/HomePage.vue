@@ -124,7 +124,7 @@
 
 
 <script >
-
+import { PasswordService }  from  '../api/PasswordService.js'
 import AddNewPassword from '../components/AddNewPassword.vue';
 
 export default{
@@ -230,10 +230,9 @@ export default{
         }
     },
 
-    computed: {
-        parseUrl(url){
-
-        }
+    async created(){
+        this.items = await PasswordService.getAllPasswords();
+        
     }
 }
 

@@ -14,9 +14,7 @@ export class PasswordService{
     }
 
     async addPassword(body) {
-      const response = await axios.post('http://localhost:8080/api/pass', {
-          
-      });
+      const response = await axios.post('http://localhost:8080/api/pass', body);
       return response;
     }
 

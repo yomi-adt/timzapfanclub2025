@@ -1,0 +1,27 @@
+{
+    "name": "Hello Extensions",
+    "description": "Base Level Extension",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "webRequest"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "scripts/background.js"
+    },
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "images/skull.png"
+    },
+    "content_scripts": [
+        {
+            "js": ["scripts/content.js"],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}   

@@ -11,7 +11,7 @@
         New
         </b-button>
 
-        <b-modal
+        <!-- <b-modal
             title="Add New Password"
             v-model="showModal"
             centered
@@ -19,7 +19,7 @@
         >   
         <b-inpt
 
-        </b-modal>
+        </b-modal> -->
 
 
 

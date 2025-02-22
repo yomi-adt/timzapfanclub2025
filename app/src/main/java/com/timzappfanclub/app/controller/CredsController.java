@@ -12,11 +12,16 @@ import com.timzappfanclub.app.backend.PasswordManager;
 import com.timzappfanclub.app.dto.CredsDto;
 import com.timzappfanclub.app.service.CredsService;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api/pass")
 public class CredsController {
+
+
     private CredsService service;
 
     // POST login

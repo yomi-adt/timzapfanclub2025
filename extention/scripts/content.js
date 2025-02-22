@@ -1,7 +1,7 @@
 
 let url = "http://localhost:8080";
 
-//document.addEventListener("DOMContentLoaded", autofill());
+document.addEventListener("DOMContentLoaded", autofill());
 //document.addEventListener("submit", captureLoginInfo());
 
 

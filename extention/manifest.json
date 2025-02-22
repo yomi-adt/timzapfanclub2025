@@ -14,7 +14,7 @@
     },
     "action": {
         "default_popup": "popup/popup.html",
-        "default_icon": "images/hello_extensions.png"
+        "default_icon": "images/skull.png"
     },
     "content_scripts": [
         {

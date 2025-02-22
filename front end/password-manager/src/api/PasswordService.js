@@ -10,9 +10,7 @@ export class PasswordService{
       const token = localStorage.getItem('authToken');
 
       const response = await axios.get('http://localhost:8080/login', {
-        headers: {
-          Authorization: `Bearer ${token}`
-        },
+
       });
       return response;
     }
@@ -29,9 +27,7 @@ export class PasswordService{
 
     async deletePassword(passwordId) {
       const response = await axios.delete('http://localhost:8080/' + passwordId, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        },
+
       });
       return response;
     }

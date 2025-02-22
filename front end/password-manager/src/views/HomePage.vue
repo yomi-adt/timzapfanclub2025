@@ -35,6 +35,8 @@
                         <b-table
                             :items="items"
                             :fields="fields"
+                            :current-page="currentPage"
+                            :per-page="perPage"
                             show-empty
                             fixed
                             
@@ -103,6 +105,12 @@ export default{
             showPassword: false,
 
             fields: [
+            {
+                    key: 'id',
+                    sortable: false,
+                    thStyle: {width: '4%'},
+                    label: 'ID'
+                },
                 {
                     key: 'url',
                     sortable: false,
@@ -142,8 +150,8 @@ export default{
             ],
 
             items: [
-                {url: "WWW.google.com", username: "qwertzLMAO", password: "XDXDXDXssdsadsadsadsadsadsadsasaaddsadsadsadsadsadsasadsaD"},
-                {url: "WWW.google.com", username: "qwertzLMAO", password: "XDXDXDXDXDXDXD"},
+                {id: '1', url: "WWW.google.com", username: "qwertzLMAO", password: "XDXDXDXssdsadsadsadsadsadsadsasaaddsadsadsadsadsadsasadsaD"},
+                {id: '2', url: "WWW.google.com", username: "qwertzLMAO", password: "XDXDXDXDXDXDXD"},
             ]
 
         }

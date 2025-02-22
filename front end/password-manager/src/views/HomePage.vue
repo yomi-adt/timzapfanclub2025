@@ -175,19 +175,21 @@ export default{
             }
         },
 
-        async deleteButton() {
+        async deleteButton(item) {
             try {
                 console.log("LOL XD")
                 
                 this.$bvModal.msgBoxOk('Say goodbye to your information', {
-                    title: 'Deleted!',
+                    title: 'Password Deleted!',
                     size: 'sm',
                     buttonSize: 'sm',
                     okVariant: 'success',
                     centered: true
                     })
 
-                
+                    // console.log(item.id)
+                    this.items.splice(this.items.indexOf(item), 1)
+                    // console.log("After deletion: " + item.id)
 
             } catch($e) {
 

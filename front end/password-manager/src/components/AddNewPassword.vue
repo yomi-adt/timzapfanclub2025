@@ -6,20 +6,42 @@
             block
             size="md"
             @click="showModal = true"
+            @ok="submit"
         >
         <i class="bi bi-plus-circle"></i>
         New
         </b-button>
 
-        <!-- <b-modal
+        <b-modal
             title="Add New Password"
             v-model="showModal"
             centered
             ok-title="Add"
         >   
-        <b-inpt
 
-        </b-modal> -->
+        <b-form-group label="URL">
+            <b-form-input
+            v-model="url"
+            placeholder="Enter the URL"
+            ></b-form-input>
+        </b-form-group>
+        
+        <b-form-group label="Username">
+            <b-form-input
+            v-model="username"
+            placeholder="Enter the username"
+            ></b-form-input>
+        </b-form-group>
+
+        <b-form-group label="Password">
+            <b-form-input
+            type="password"
+            v-model="password"
+            placeholder="Enter the password"
+            ></b-form-input>
+        </b-form-group>
+
+        </b-modal>
 
 
 
@@ -36,8 +58,18 @@ export default{
     data(){
         return{
             showModal: false,
+            url: '',
+            username: '',
+            password: '',
+
+        }
+    },
 
 
+    methods: {
+        async submit(){
+            
+            //make POST api call
         }
     }
 }

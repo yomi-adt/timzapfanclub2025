@@ -2,21 +2,26 @@ import axios from 'axios';
 
 export class PasswordService{
     async authenticateUser(password) {
-        const response = await axios.post('http://localhost:8080/login', { pass: password });
+        const response = await axios.post(`http://localhost:8080/api/pass/login/${password}`);
         return response;
     }
 
     async getAllPasswords() {
-      const token = localStorage.getItem('authToken');
-
-      const response = await axios.get('http://localhost:8080/login', {
+      const response = await axios.get('http://localhost:8080/api/pass', {
 
       });
       return response;
     }
 
-    async editPassword(edits) {
-      const response = await axios.put('http://localhost:8080/', edits, {
+    async addPassword(body) {
+      const response = await axios.post('http://localhost:8080/api/pass', {
+          
+      });
+      return response;
+    }
+
+    async editPassword(body) {
+      const response = await axios.put('http://localhost:8080/api/pass', edits, {
         headers: {
           Authorization: `Bearer ${token}`
         },

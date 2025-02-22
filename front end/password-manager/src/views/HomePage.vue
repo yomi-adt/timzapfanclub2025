@@ -62,6 +62,7 @@
                             <b-button
                                 variant="danger"
                                 size="sm"
+                                @click="deleteButton(currRow.item)"
                                 >
                                 <i class="bi bi-trash3-fill"></i>
                             </b-button>
@@ -160,6 +161,25 @@ export default{
                     okVariant: 'success',
                     centered: true
                     })
+
+            } catch($e) {
+
+            }
+        },
+
+        async deleteButton() {
+            try {
+                console.log("LOL XD")
+                
+                this.$bvModal.msgBoxOk('Say goodbye to your information', {
+                    title: 'Deleted!',
+                    size: 'sm',
+                    buttonSize: 'sm',
+                    okVariant: 'success',
+                    centered: true
+                    })
+
+                
 
             } catch($e) {
 
